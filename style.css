@@ -1,0 +1,1282 @@
+/* =====================================================
+   POMODORO PRO v4.0
+   style.css (PART 1)
+===================================================== */
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    transition:.35s;
+
+}
+
+/* =====================================================
+   LIGHT THEME
+===================================================== */
+
+:root{
+
+    --bg:#F4ECFF;
+
+    --bg-secondary:#EAD8FF;
+
+    --glass:rgba(255,255,255,.70);
+
+    --glass-border:rgba(255,255,255,.35);
+
+    --primary:#8B5CF6;
+
+    --primary-dark:#6D28D9;
+
+    --secondary:#10B981;
+
+    --heading:#4C1D95;
+
+    --text:#5B4B73;
+
+    --white:#FFFFFF;
+
+    --ring-bg:#E5D5FF;
+
+    --shadow:rgba(76,29,149,.18);
+
+}
+
+/* =====================================================
+   DARK THEME
+===================================================== */
+
+body.dark{
+
+    --bg:#181425;
+
+    --bg-secondary:#261E38;
+
+    --glass:rgba(38,33,55,.90);
+
+    --glass-border:rgba(255,255,255,.05);
+
+    --primary:#A78BFA;
+
+    --primary-dark:#C4B5FD;
+
+    --secondary:#34D399;
+
+    --heading:#F5F3FF;
+
+    --text:#D6D2E5;
+
+    --white:#FFFFFF;
+
+    --ring-bg:#443C5F;
+
+    --shadow:rgba(0,0,0,.35);
+
+}
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+
+    min-height:100vh;
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        var(--bg),
+
+        var(--bg-secondary)
+
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:25px;
+
+}
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.container{
+
+    width:390px;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border-radius:28px;
+
+    border:1px solid var(--glass-border);
+
+    padding:28px;
+
+    box-shadow:
+
+    0 20px 45px
+
+    var(--shadow);
+
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    margin-bottom:30px;
+
+}
+
+.header h1{
+
+    color:var(--heading);
+
+    font-size:31px;
+
+}
+
+.subtitle{
+
+    margin-top:6px;
+
+    color:var(--text);
+
+    font-size:14px;
+
+}
+
+/* =====================================================
+   THEME BUTTON
+===================================================== */
+
+#themeToggle{
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#themeToggle:hover{
+
+    transform:rotate(20deg);
+
+}
+
+/* =====================================================
+   TIMER SECTION
+===================================================== */
+
+.timer-section{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:28px;
+
+}
+
+.timer-container{
+
+    position:relative;
+
+    width:250px;
+
+    height:250px;
+
+    margin:0 auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* =====================================================
+   SVG
+===================================================== */
+
+.progress-ring{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:250px;
+
+    height:250px;
+
+    display:block;
+
+    transform:rotate(-90deg);
+
+    transform-origin:50% 50%;
+
+}
+
+.progress-bg{
+
+    fill:none;
+
+    stroke:var(--ring-bg);
+
+    stroke-width:12;
+
+}
+
+.progress-ring-circle{
+
+    fill:none;
+
+    stroke:var(--primary);
+
+    stroke-width:12;
+
+    stroke-linecap:round;
+
+    stroke-dasharray:628;
+
+    stroke-dashoffset:0;
+
+    transition:
+
+    stroke .4s,
+
+    stroke-dashoffset .8s linear;
+
+}
+
+/* =====================================================
+   TIMER CONTENT
+===================================================== */
+
+.timer-content{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+#mode{
+
+    color:var(--primary-dark);
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    font-weight:bold;
+
+    font-size:15px;
+
+    margin-bottom:10px;
+
+}
+
+#timer{
+
+    font-size:56px;
+
+    font-weight:bold;
+
+    color:var(--heading);
+
+}
+
+/* =====================================================
+   CONTROLS
+===================================================== */
+
+.controls{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:30px;
+
+}
+
+.controls button{
+
+    flex:1;
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:13px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.controls button:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-3px);
+
+}
+
+.controls button:active{
+
+    transform:scale(.97);
+
+}
+
+/* =====================================================
+   SECTION TITLES
+===================================================== */
+
+.section-title{
+
+    color:var(--heading);
+
+    font-size:21px;
+
+    font-weight:bold;
+
+    margin-bottom:16px;
+
+}
+
+
+/* =====================================================
+   POMODORO PRO v4.0
+   style.css (PART 2)
+===================================================== */
+
+/* =====================================================
+   PRODUCTIVITY DASHBOARD
+===================================================== */
+
+.dashboard{
+
+    margin-bottom:28px;
+
+}
+
+.stats-grid{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.stats-card{
+
+    background:rgba(255,255,255,.28);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:18px;
+
+    padding:18px;
+
+    transition:.25s;
+
+    backdrop-filter:blur(10px);
+
+}
+
+body.dark .stats-card{
+
+    background:rgba(255,255,255,.05);
+
+    border-color:rgba(255,255,255,.08);
+
+}
+
+.stats-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px var(--shadow);
+
+}
+
+.stats-card h3{
+
+    color:var(--heading);
+
+    margin-bottom:14px;
+
+    font-size:18px;
+
+}
+
+.stats-card p{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:10px 0;
+
+    color:var(--text);
+
+    font-size:15px;
+
+}
+
+.stats-card span{
+
+    color:var(--primary);
+
+    font-weight:bold;
+
+    font-size:16px;
+
+}
+
+/* =====================================================
+   STREAK CARD
+===================================================== */
+
+.streak-card{
+
+    margin-bottom:30px;
+
+    padding:18px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        135deg,
+        #F59E0B,
+        #F97316
+    );
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    text-align:center;
+
+    box-shadow:0 12px 24px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+
+.streak-card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+#streak{
+
+    font-size:30px;
+
+    margin:0 8px;
+
+}
+
+/* =====================================================
+   TASK INPUT
+===================================================== */
+
+.tasks{
+
+    margin-bottom:25px;
+
+}
+
+.task-input{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:18px;
+
+}
+
+.task-input input{
+
+    flex:1;
+
+    padding:13px 15px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:14px;
+
+    background:white;
+
+    color:#333;
+
+    font-size:15px;
+
+    transition:.25s;
+
+}
+
+.task-input input:focus{
+
+    box-shadow:0 0 0 3px rgba(139,92,246,.20);
+
+}
+
+body.dark .task-input input{
+
+    background:#2F2945;
+
+    color:white;
+
+}
+
+.task-input button{
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:13px 18px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.task-input button:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/* =====================================================
+   ACTIVE TASK
+===================================================== */
+
+.active-task{
+
+    background:rgba(255,255,255,.28);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:18px;
+
+    padding:16px;
+
+    margin-bottom:20px;
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s;
+
+}
+
+body.dark .active-task{
+
+    background:rgba(255,255,255,.05);
+
+    border-color:rgba(255,255,255,.08);
+
+}
+
+.active-task small{
+
+    display:block;
+
+    color:var(--primary-dark);
+
+    font-weight:bold;
+
+    letter-spacing:.8px;
+
+    margin-bottom:10px;
+
+}
+
+.active-task-row{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+}
+
+#currentTask{
+
+    flex:1;
+
+    color:var(--heading);
+
+    font-weight:bold;
+
+    font-size:16px;
+
+    word-break:break-word;
+
+}
+
+/* Clear Active Task Button */
+
+#clearCurrentTask{
+
+    width:34px;
+
+    height:34px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#FEE2E2;
+
+    color:#DC2626;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#clearCurrentTask:hover{
+
+    transform:scale(1.08);
+
+    background:#FCA5A5;
+
+}
+
+body.dark #clearCurrentTask{
+
+    background:#4B1F24;
+
+    color:#FCA5A5;
+
+}
+
+
+
+/* =====================================================
+   POMODORO PRO v4.0
+   style.css (PART 3)
+===================================================== */
+
+/* =====================================================
+   TASK LIST
+===================================================== */
+
+#taskList{
+
+    list-style:none;
+
+    max-height:280px;
+
+    overflow-y:auto;
+
+    padding-right:4px;
+
+}
+
+.task{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:rgba(255,255,255,.35);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:16px;
+
+    padding:14px;
+
+    margin-bottom:12px;
+
+    transition:.25s;
+
+}
+
+body.dark .task{
+
+    background:rgba(255,255,255,.06);
+
+    border-color:rgba(255,255,255,.08);
+
+}
+
+.task:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px var(--shadow);
+
+}
+
+/* Highlight currently selected task */
+
+.task.active{
+
+    border:2px solid var(--primary);
+
+    background:rgba(139,92,246,.12);
+
+}
+
+body.dark .task.active{
+
+    background:rgba(167,139,250,.12);
+
+}
+
+.task-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex:1;
+
+}
+
+.task-left input{
+
+    width:18px;
+
+    height:18px;
+
+    accent-color:var(--primary);
+
+    cursor:pointer;
+
+}
+
+.task-left span{
+
+    color:var(--heading);
+
+    cursor:pointer;
+
+    line-height:1.4;
+
+    transition:.25s;
+
+}
+
+.completed span{
+
+    text-decoration:line-through;
+
+    opacity:.55;
+
+}
+
+/* Delete Button */
+
+.delete-btn{
+
+    width:34px;
+
+    height:34px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#FEE2E2;
+
+    color:#DC2626;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.delete-btn:hover{
+
+    transform:scale(1.08);
+
+    background:#FCA5A5;
+
+}
+
+body.dark .delete-btn{
+
+    background:#4B1F24;
+
+    color:#FCA5A5;
+
+}
+
+/* =====================================================
+   CELEBRATION ANIMATION
+===================================================== */
+
+#celebration{
+
+    position:fixed;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%) scale(.2);
+
+    font-size:90px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:999;
+
+}
+
+#celebration.show{
+
+    animation:celebrate 1.2s ease;
+
+}
+
+@keyframes celebrate{
+
+    0%{
+
+        opacity:0;
+
+        transform:translate(-50%,-50%) scale(.2);
+
+    }
+
+    30%{
+
+        opacity:1;
+
+        transform:translate(-50%,-50%) scale(1.2);
+
+    }
+
+    60%{
+
+        opacity:1;
+
+        transform:translate(-50%,-50%) scale(1.6);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:translate(-50%,-50%) scale(2);
+
+    }
+
+}
+
+/* =====================================================
+   CUSTOM SCROLLBAR
+===================================================== */
+
+#taskList::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+#taskList::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+#taskList::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width:480px){
+
+    body{
+
+        padding:16px;
+
+    }
+
+    .container{
+
+        width:100%;
+
+        padding:22px;
+
+        border-radius:22px;
+
+    }
+
+    .header{
+
+        margin-bottom:24px;
+
+    }
+
+    .header h1{
+
+        font-size:26px;
+
+    }
+
+    .subtitle{
+
+        font-size:13px;
+
+    }
+
+    .timer-container{
+
+        width:220px;
+
+        height:220px;
+
+    }
+
+    .progress-ring{
+
+        width:220px;
+
+        height:220px;
+
+    }
+
+    #timer{
+
+        font-size:46px;
+
+    }
+
+    #mode{
+
+        font-size:14px;
+
+    }
+
+    .controls{
+
+        flex-direction:column;
+
+    }
+
+    .controls button{
+
+        width:100%;
+
+    }
+
+    .task-input{
+
+        flex-direction:column;
+
+    }
+
+    .task-input button{
+
+        width:100%;
+
+    }
+
+}
+
+/* =====================================================
+   SMOOTH TRANSITIONS
+===================================================== */
+
+button,
+input,
+.task,
+.stats-card,
+.active-task,
+.streak-card,
+.container{
+
+    transition:
+
+        background .3s,
+
+        color .3s,
+
+        border-color .3s,
+
+        transform .25s,
+
+        box-shadow .25s;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE LAYOUT
+===================================================== */
+
+.container{
+
+    width:min(1200px,92%);
+
+    margin:0 auto;
+
+}
+
+
+
+/* Hero */
+
+.hero-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:24px;
+
+}
+
+
+
+/* Dashboard */
+
+.content-grid{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (min-width:768px){
+
+    .stats-grid{
+
+        display:grid;
+
+        grid-template-columns:
+
+        repeat(3,1fr);
+
+        gap:20px;
+
+    }
+
+
+
+    .controls{
+
+        justify-content:center;
+
+    }
+
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width:1024px){
+
+    .hero-section{
+
+        display:grid;
+
+        grid-template-columns:
+
+        420px 1fr;
+
+        align-items:center;
+
+        gap:50px;
+
+        margin-bottom:40px;
+
+    }
+
+
+
+    .timer-section{
+
+        justify-content:center;
+
+    }
+
+
+
+    .controls{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:18px;
+
+        align-items:stretch;
+
+    }
+
+
+
+    .controls button{
+
+        width:220px;
+
+    }
+
+
+
+    .content-grid{
+
+        display:grid;
+
+        grid-template-columns:
+
+        1fr 1fr;
+
+        gap:30px;
+
+        align-items:start;
+
+    }
+
+
+
+    .tasks{
+
+        grid-column:1/-1;
+
+    }
+
+}

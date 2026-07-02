@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Pomodoro Pro</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ===========================
+         HEADER
+    ============================ -->
+
+    <header class="header">
+
+        <div>
+
+            <h1>🍅 Pomodoro Pro</h1>
+
+            <p class="subtitle">
+
+                Stay focused. Stay productive.
+
+            </p>
+
+        </div>
+
+        <button
+            id="themeToggle"
+            title="Toggle Theme">
+
+            🌙
+
+        </button>
+
+    </header>
+
+
+
+    <!-- ===========================
+         HERO SECTION
+         (Timer + Controls)
+    ============================ -->
+
+    <div class="hero-section">
+
+        <!-- TIMER -->
+
+        <section class="timer-section">
+
+            <div class="timer-container">
+
+                <svg
+                    class="progress-ring"
+                    width="250"
+                    height="250"
+                    viewBox="0 0 250 250">
+
+                    <circle
+                        class="progress-bg"
+                        cx="125"
+                        cy="125"
+                        r="100">
+                    </circle>
+
+                    <circle
+                        class="progress-ring-circle"
+                        cx="125"
+                        cy="125"
+                        r="100">
+                    </circle>
+
+                </svg>
+
+                <div class="timer-content">
+
+                    <p id="mode">
+
+                        Focus Time
+
+                    </p>
+
+                    <h2 id="timer">
+
+                        25:00
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CONTROLS -->
+
+        <section class="controls">
+
+            <button id="start">
+
+                ▶ Start
+
+            </button>
+
+            <button id="pause">
+
+                ⏸ Pause
+
+            </button>
+
+            <button id="reset">
+
+                🔄 Reset
+
+            </button>
+
+        </section>
+
+    </div>
+
+
+
+    <!-- ===========================
+         CONTENT GRID
+    ============================ -->
+
+    <div class="content-grid">
+
+        <!-- PRODUCTIVITY -->
+
+        <section class="dashboard">
+
+            <div class="section-title">
+
+                📊 Productivity
+
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stats-card">
+
+                    <h3>Today</h3>
+
+                    <p>🍅 Sessions <span id="todaySessions">0</span></p>
+
+                    <p>⏱ Minutes <span id="todayMinutes">0</span></p>
+
+                    <p>✅ Tasks <span id="todayTasks">0</span></p>
+
+                </div>
+
+                <div class="stats-card">
+
+                    <h3>This Week</h3>
+
+                    <p>🍅 Sessions <span id="weekSessions">0</span></p>
+
+                    <p>⏱ Minutes <span id="weekMinutes">0</span></p>
+
+                    <p>✅ Tasks <span id="weekTasks">0</span></p>
+
+                </div>
+
+                <div class="stats-card">
+
+                    <h3>Lifetime</h3>
+
+                    <p>🍅 Sessions <span id="totalSessions">0</span></p>
+
+                    <p>⏱ Minutes <span id="totalMinutes">0</span></p>
+
+                    <p>✅ Tasks <span id="totalTasks">0</span></p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- STREAK -->
+
+        <section class="streak-card">
+
+            🔥
+
+            <span id="streak">
+
+                0
+
+            </span>
+
+            Day Streak
+
+        </section>
+
+
+
+        <!-- TASKS -->
+
+        <section class="tasks">
+
+            <div class="section-title">
+
+                📝 Today's Tasks
+
+            </div>
+
+            <div class="task-input">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What are you working on today?">
+
+                <button id="addTask">
+
+                    Add
+
+                </button>
+
+            </div>
+
+            <div class="active-task">
+
+                <small>
+
+                    CURRENTLY WORKING ON
+
+                </small>
+
+                <div class="active-task-row">
+
+                    <span id="currentTask">
+
+                        No task selected
+
+                    </span>
+
+                    <button
+                        id="clearCurrentTask"
+                        title="Clear Current Task">
+
+                        ✕
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <ul id="taskList">
+
+            </ul>
+
+        </section>
+
+    </div>
+
+</div>
+
+
+
+<!-- ===========================
+     CELEBRATION
+============================ -->
+
+<div id="celebration">
+
+    🎉
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
